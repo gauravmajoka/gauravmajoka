@@ -98,7 +98,7 @@ const AlbumDetailPage = () => {
       photos.map(async (photo) => {
         const photoId = photo.id;
         // fallback to constructed link if backend didn't provide it
-        const link = photo.link || `/albums/${id}/photos/${photoId}/download-photo`;
+        const link = photo.link || `/album/albums/${id}/photos/${photoId}/download-photo`;
         const thumbnailUrlTry = buildFullUrl(`${link}?thumbnail=true`);
         const fallbackUrl = buildFullUrl(link);
 
@@ -133,7 +133,7 @@ const AlbumDetailPage = () => {
       return;
     }
 
-    const link = photo.link || `/albums/${id}/photos/${photo.id}/download-photo`;
+    const link = photo.link || `/album/albums/${id}/photos/${photo.id}/download-photo`;
     const url = buildFullUrl(link);
 
     try {
